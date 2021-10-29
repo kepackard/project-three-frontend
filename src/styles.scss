@@ -3,28 +3,39 @@
 // --------------------------
 $maincolor: black;
 $contrastcolor: white;
+$peach: #f8cea6;
+$burlywood: #ecaf78;
+$darkseagreen: #a2a787;
+$darkslategreen: #375f57;
+$teal: #04262a;
 
-@mixin white-text-black-bg {
-  color: $contrastcolor;
-  background-color: $maincolor;
+
+
+@mixin light-text-dark-bg {
+  color: $peach;
+  background-color: $teal;
 }
 
-@mixin black-text-white-bg {
-  color: $maincolor;
-  background-color: $contrastcolor;
+@mixin dark-text-light-bg {
+  color: $teal;
+  background-color: $peach;
 }
+
+
 
 // --------------------------
 // Header
 // --------------------------
 
 nav {
-  @include white-text-black-bg;
+  @include light-text-dark-bg;
   display: flex;
   justify-content: flex-start;
-
+ 
   a {
-    @include white-text-black-bg;
+    @include light-text-dark-bg;
+    text-decoration: none;
+
 
     div {
       margin: 10px;
@@ -32,3 +43,9 @@ nav {
     }
   }
 }
+
+//Google fonts
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+//Font Variables
+$fell-english: 'IM Fell English SC', serif;
