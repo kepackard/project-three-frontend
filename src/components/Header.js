@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+//importing the react 'link' component feature
 
 function Header(props) {
 

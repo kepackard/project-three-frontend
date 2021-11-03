@@ -1,16 +1,42 @@
+import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import Index from "../pages/Index.js";
-import Show from "../pages/Show.js";
+import Index from "../pages/Index";
+import Show from "../pages/Show";
 
 function Main(props) {
+    const [plans, setPlans] = useState(null);
+
+    const URL = "http://localhost:3001/plans/";
+
+    const getPlans = async () => {
+        const response = await fetch(URL);
+        const data = await response.json();
+        setPlans(data);
+    }
+
+    const createPlans = async (plan) => {
+        //make post request to create plan
+        await fetch(URL, {
+            method: "POST", 
+            headers: {
+                "Content-Type": "Application/json",
+            },
+            body: JSON.stringify(plan),
+        });
+        // update list of plans
+        getPlans();
+    };
+
+    useEffect(() => getPlans(), []);
 
     return (
         <main>
             <Switch>
                 <Route exact path="/">
-                    <Index />
+                    <Index plans={plans} createPlans={createPlans}/>
                 </Route>
-                <Route path="/plans/:id" render={(rp) => <Show {...rp} />} />
+                <Route path="/plans/:id" render={(rp) => (
+                <Show {...rp} />)} />
             </Switch>
         </main>
     );
