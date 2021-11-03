@@ -1,14 +1,44 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Index(props) {
+    // state to hold formData
+    const [newForm, setNewForm] = useState({
+        title: "",
+        img: "",
+        parks: "",
+        gradeLevel: "",
+    });
+
+    //handleChange function for form
+    const handleChange = (event) => {
+        setNewForm((prevState) => ({
+            ...prevState, [event.target.title]: event.target.value,
+        }));
+    };
+
+    //handle submit function form 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        props.createPlans(newForm);
+        setNewForm({
+            title: "",
+            img: "",
+            parks: "",
+            gradeLevel: "",
+        })
+    };
+
     //loaded function
     const loaded = () => {
         return props.plans.map((plan) => (
             <div key={personalbar._id} className="plan">
                 <Link to={`/plans/${plan._id}`}>
-                    <h1>{plan.name}</h1>
+                    <h1>{plan.title}</h1>
+                    <h4>{plan.parks}</h4>
+                    <h4>{plan.gradeLevel}</h4>
                 </Link>
-                <h3>{plan.title}</h3>
+                <img src={plan.img} alt={plan.title} />          
             </div>
         ));
     };
@@ -17,7 +47,35 @@ function Index(props) {
         return <h1>Loading...</h1>;
     };
 
-    return props.plans ? loaded() : loading();
-  }
+    return (
+        <section>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    value={newForm.title}
+                    title="title"
+                    placeholder="title"
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
+                    value={newForm.img}
+                    title="img"
+                    placeholder="img URL"
+                    onChange={handleChange}
+                />
+                <input
+                    type="parks"
+                    value={newForm.parks}
+                    title="parks"
+                    placeholder="parks"
+                    onChange={handleChange}
+                />
+                <input type="submit" value="Create Lesson Plan" />
+            </form>
+            {props.plans ? loaded() : loading()}
+        </section>
+    );
+  };
   
   export default Index;
