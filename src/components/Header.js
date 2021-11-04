@@ -6,7 +6,8 @@ function Header(props) {
     return (
         <nav className="nav">
             <Link to="/">
-                <div>National Park Lesson Plans</div>
+                <header>You Are Here</header>
+                <div className="subheader">National Park Lesson Plans for Educators</div>
             </Link>
         </nav>
     );

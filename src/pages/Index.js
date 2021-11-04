@@ -12,9 +12,7 @@ function Index(props) {
 
     //handleChange function for form
     const handleChange = (event) => {
-        setNewForm((prevState) => ({
-            ...prevState, [event.target.title]: event.target.value,
-        }));
+        setNewForm({...newForm, [event.target.title]: event.target.value });
     };
 
     //handle submit function form 
@@ -32,7 +30,7 @@ function Index(props) {
     //loaded function
     const loaded = () => {
         return props.plans.map((plan) => (
-            <div key={personalbar._id} className="plan">
+            <div key={plan._id} className="plan">
                 <Link to={`/plans/${plan._id}`}>
                     <h1>{plan.title}</h1>
                     <h4>{plan.parks}</h4>
@@ -49,31 +47,35 @@ function Index(props) {
 
     return (
         <section>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={newForm.title}
-                    title="title"
-                    placeholder="title"
-                    onChange={handleChange}
-                />
-                <input
-                    type="text"
-                    value={newForm.img}
-                    title="img"
-                    placeholder="img URL"
-                    onChange={handleChange}
-                />
-                <input
-                    type="parks"
-                    value={newForm.parks}
-                    title="parks"
-                    placeholder="parks"
-                    onChange={handleChange}
-                />
-                <input type="submit" value="Create Lesson Plan" />
-            </form>
-            {props.plans ? loaded() : loading()}
+            <div className="form-container">
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        value={newForm.title}
+                        title="title"
+                        placeholder="title"
+                        onChange={handleChange}
+                    />
+                    <input
+                        type="text"
+                        value={newForm.img}
+                        title="img"
+                        placeholder="img URL"
+                        onChange={handleChange}
+                    />
+                    <input
+                        type="parks"
+                        value={newForm.parks}
+                        title="parks"
+                        placeholder="parks"
+                        onChange={handleChange}
+                    />
+                    <input type="submit" value="Create Lesson Plan" />
+                </form>
+            </div>
+            <div className="plan-container">
+                {props.plans ? loaded() : loading()}
+            </div>
         </section>
     );
   };

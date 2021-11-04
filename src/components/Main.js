@@ -6,7 +6,7 @@ import Show from "../pages/Show";
 function Main(props) {
     const [plans, setPlans] = useState(null);
 
-    const URL = "http://localhost:3001/plans/";
+    const URL = "http://localhost:3001/plans";
 
     const getPlans = async () => {
         const response = await fetch(URL);
@@ -15,7 +15,6 @@ function Main(props) {
     }
 
     const createPlans = async (plan) => {
-        //make post request to create plan
         await fetch(URL, {
             method: "POST", 
             headers: {
@@ -23,7 +22,16 @@ function Main(props) {
             },
             body: JSON.stringify(plan),
         });
-        // update list of plans
+
+        getPlans();
+    };
+
+    const deletePlans = async (id) => {
+        // make delete request to create lesson plans
+        await fetch(URL + id, {
+            method: "DELETE",
+        });
+
         getPlans();
     };
 
@@ -36,7 +44,14 @@ function Main(props) {
                     <Index plans={plans} createPlans={createPlans}/>
                 </Route>
                 <Route path="/plans/:id" render={(rp) => (
-                <Show {...rp} />)} />
+                    <Show 
+                        plans={plans}
+                        // updatePlans={updatePlans}
+                        deletePlans={deletePlans}
+                        {...rp} 
+                    />
+                )} 
+            />
             </Switch>
         </main>
     );

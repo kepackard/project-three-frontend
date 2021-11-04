@@ -1,3 +1,5 @@
+
+
 // --------------------------
 // VARIABLES
 // --------------------------
@@ -9,19 +11,22 @@ $darkseagreen: #a2a787;
 $darkslategreen: #375f57;
 $teal: #04262a;
 
-
-
 @mixin light-text-dark-bg {
   color: $peach;
-  background-color: $teal;
+  background-color: $darkslategreen;
 }
 
 @mixin dark-text-light-bg {
-  color: $teal;
+  color: $darkslategreen;
   background-color: $peach;
 }
 
 
+//Google fonts
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+//Font Variables
+$fell-english: 'IM Fell English SC', serif;
 
 // --------------------------
 // Header
@@ -31,21 +36,43 @@ nav {
   @include light-text-dark-bg;
   display: flex;
   justify-content: flex-start;
+  font-size: 72px;
  
   a {
     @include light-text-dark-bg;
     text-decoration: none;
 
 
-    div {
-      margin: 10px;
-      font-size: large;
+div {
+    margin: 10px;
+    font-size: large;
     }
   }
 }
 
-//Google fonts
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+header {
+    font-family: $fell-english;
 
-//Font Variables
-$fell-english: 'IM Fell English SC', serif;
+}
+
+.subheader {
+    font-style: italic;
+    font-size: large;
+    justify-content: left;
+}
+
+form {
+  padding: 15px;
+}
+
+plan {
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 20%;
+}
+
+plan-container {
+  display: flex;
+  flex-wrap: wrap;
+
+}
