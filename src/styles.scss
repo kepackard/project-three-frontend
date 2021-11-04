@@ -43,7 +43,8 @@ a:visited {
 nav {
   @include light-text-dark-bg;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
   font-size: 72px;
  
   a {
@@ -74,15 +75,23 @@ form {
   padding: 15px;
 }
 
+div.form-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: $peach;
+  margin: 5px 0 5px 0;
+}
+
 .plan {
   display: flex;
   justify-content: space-between;
   // align-items: stretch;
-  border: 2px solid $darkslategreen;
-  color: white;
-  background-color: $darkslategreen;
+  border: 2px solid $darkseagreen;
+  color: $burlywood;
+  background-color: $darkseagreen;
   padding: 5px;
-  margin: 0;
+  margin: 5px 0 5px 0;
 }
 
 plan-container {
@@ -95,6 +104,10 @@ plan-container {
 
 h4 {
   font-weight: normal;
+}
+
+h1 {
+  color: black;
 }
 
 #delete {
@@ -115,4 +128,8 @@ show-plan {
 notebook {
   width: 100px;
   height: 100px;
+}
+
+img.mountain {
+  padding: 0 50px 0 0;
 }
