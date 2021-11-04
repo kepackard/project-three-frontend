@@ -1,13 +1,11 @@
 import { useState } from "react";
 
-// function Show(props) {
-//     return <h1>Show Page</h1>;
-//   }
-
 function Show(props) {
+  console.log(props);
+
   const id = props.match.params.id;
   const plans = props.plans;
-  const plan = plans.find((p) => p._id === id);
+  const plan = plans?.find((p) => p._id === id);
 
   const [editForm, setEditForm] = useState(plan);
 
@@ -21,7 +19,7 @@ function Show(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.updatePlans(editForm);
+    props.updatePlans(editForm, id);
     props.history.push("/");
   };
 
@@ -33,27 +31,28 @@ function Show(props) {
 
     return (
         <div className="plan">
-            <h1>{plan.title}</h1>
-            <h2>{plan.parks}</h2>
-            <h2>{plan.questionObjective}</h2>
-            <h2>{plan.subject}</h2>
-            <h2>{plan.gradeLevel}</h2>
-            <h2>{plan.duration}</h2>
-            <img src={plan.img} alt={plan.title} />
+            <h1>{plan?.title}</h1>
+            <h2>{plan?.url}</h2>
+            <h2>{plan?.parks}</h2>
+            <h2>{plan?.questionObjective}</h2>
+            <h2>{plan?.subject}</h2>
+            <h2>{plan?.gradeLevel}</h2>
+            <h2>{plan?.duration}</h2>
+            <img src={plan?.img} alt={plan?.title} />
             <button id="delete" onClick={removePlan}>
                 DELETE
             </button>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    value={editForm.title}
+                    value={editForm?.title}
                     name="title"
                     placeholder="title"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
-                    value={editForm.img}
+                    value={editForm?.img}
                     name="img"
                     placeholder="img URL"
                     onChange={handleChange}

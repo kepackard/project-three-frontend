@@ -6,7 +6,7 @@ import Show from "../pages/Show";
 function Main(props) {
     const [plans, setPlans] = useState(null);
 
-    const URL = "http://localhost:3001/plans";
+    const URL = "https://rocky-scrubland-80311.herokuapp.com/plans/";
 
     const getPlans = async () => {
         const response = await fetch(URL);
@@ -35,6 +35,18 @@ function Main(props) {
         getPlans();
     };
 
+    const updatePlans = async (plan, id) => {
+        await fetch(URL + id, {
+            method: "PUT", 
+            headers: {
+                "Content-Type": "Application/json",
+            },
+            body: JSON.stringify(plan),
+        });
+
+        getPlans();
+    };
+
     useEffect(() => getPlans(), []);
 
     return (
@@ -46,7 +58,7 @@ function Main(props) {
                 <Route path="/plans/:id" render={(rp) => (
                     <Show 
                         plans={plans}
-                        // updatePlans={updatePlans}
+                        updatePlans={updatePlans}
                         deletePlans={deletePlans}
                         {...rp} 
                     />
