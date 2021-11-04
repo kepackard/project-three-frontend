@@ -31,12 +31,14 @@ function Index(props) {
     const loaded = () => {
         return props.plans.map((plan) => (
             <div key={plan._id} className="plan">
-                <Link to={`/plans/${plan._id}`}>
+                <Link to={`/plans/${plan._id}`} style={{ textDecoration: "none" }}>
                     <h1>{plan.title}</h1>
                     <h4>{plan.parks}</h4>
                     <h4>{plan.gradeLevel}</h4>
                 </Link>
-                <img src={plan.img} alt={plan.title} />          
+                <div className="notebook">
+                    <img src={plan.img} alt={plan.title} />
+                </div>          
             </div>
         ));
     };
@@ -49,28 +51,56 @@ function Index(props) {
         <section>
             <div className="form-container">
                 <form onSubmit={handleSubmit}>
+                    <input type="submit" value="Add Your Own Lesson Plan" />
                     <input
-                        type="text"
+                        type="new-input"
                         value={newForm.title}
                         title="title"
-                        placeholder="title"
+                        placeholder="Title"
                         onChange={handleChange}
                     />
                     <input
                         type="text"
-                        value={newForm.img}
-                        title="img"
-                        placeholder="img URL"
+                        value={newForm.parks}
+                        title="title"
+                        placeholder="Park"
+                        onChange={handleChange}
+                    />
+                     <input
+                        type="new-input"
+                        value={newForm.questionObjective}
+                        title="title"
+                        placeholder="Student Objectives"
+                        onChange={handleChange}
+                    />
+                     <input
+                        type="new-input"
+                        value={newForm.subject}
+                        title="title"
+                        placeholder="Subject"
+                        onChange={handleChange}
+                    />
+                     <input
+                        type="new-input"
+                        value={newForm.gradeLevel}
+                        title="title"
+                        placeholder="Grade Level"
                         onChange={handleChange}
                     />
                     <input
-                        type="parks"
-                        value={newForm.parks}
-                        title="parks"
-                        placeholder="parks"
+                        type="new-input"
+                        value={newForm.img}
+                        title="img"
+                        placeholder="Image URL"
                         onChange={handleChange}
                     />
-                    <input type="submit" value="Create Lesson Plan" />
+                    <input
+                        type="new-input"
+                        value={newForm.duration}
+                        title="parks"
+                        placeholder="Plan Duration"
+                        onChange={handleChange}
+                    />
                 </form>
             </div>
             <div className="plan-container">

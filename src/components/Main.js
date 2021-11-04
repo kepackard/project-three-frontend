@@ -23,7 +23,9 @@ function Main(props) {
             body: JSON.stringify(plan),
         });
 
+
         getPlans();
+        // console.log(plans.url);
     };
 
     const deletePlans = async (id) => {
