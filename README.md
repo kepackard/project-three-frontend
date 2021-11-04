@@ -1,5 +1,5 @@
 ## You Are Here
-#### _Lesson Plans for Educators from US National Park Service_
+#### _Lesson Plans from the US National Park Service for K&mdash;12 Educators_
 
 
 
@@ -7,7 +7,7 @@
 ***
 ## Introduction
 
-A paragraph used to introduce interested parties to the project and needs to include one or more screenshots.
+Lorem ipsum a paragraph used to introduce interested parties to the project and needs to include one or more screenshots.
 
 Screenshot 1
 Screenshot 2
