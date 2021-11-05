@@ -32,15 +32,12 @@ function Show(props) {
     return (
         <div className="show-plan">
             <h2>{plan?.title}</h2>
-            {/* <Link to="{plan?.url}" target="_blank"> Click Here for the Full Lesson Plan</Link> */}
+            <Link to="{plan.url}" target="_blank"> Click Here for the Full Lesson Plan</Link>
             <h4>Park: {plan?.parks}</h4>
             <h4>Lesson Objective: {plan?.questionObjective}</h4>
             <h4>Subject: {plan?.subject}</h4>
             <h4>Appropriate for: {plan?.gradeLevel}</h4>
             <h4>Duration: {plan?.duration}</h4>
-            <button id="delete" onClick={removePlan}>
-                Delete This Lesson Plan
-            </button>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -93,6 +90,9 @@ function Show(props) {
                 />
                 <input type="submit" value="Update This Lesson Plan" />
             </form>
+            <button id="delete" onClick={removePlan}>
+                Delete This Lesson Plan
+            </button>
         </div>
     );
   }

@@ -9,7 +9,7 @@ function Header(props) {
                 <header>You Are Here</header>
                 <div className="subheader">National Park Lesson Plans for Educators</div>
             </Link>
-            <img className="mountain" src="https://imgur.com/lbEgVVu.png"/>
+            <img className="mountain" src="https://imgur.com/lbEgVVu.png" alt="mountain drawing"/>
         </nav>
     );
   }

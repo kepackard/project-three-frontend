@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Index(props) {
-    // state to hold formData
     const [newForm, setNewForm] = useState({
         title: "",
         img: "",
@@ -10,7 +9,6 @@ function Index(props) {
         gradeLevel: "",
     });
 
-    //handleChange function for form
     const handleChange = (event) => {
         setNewForm({...newForm, [event.target.title]: event.target.value });
     };
@@ -27,7 +25,6 @@ function Index(props) {
         })
     };
 
-    //loaded function
     const loaded = () => {
         return props.plans.map((plan) => (
             <div key={plan._id} className="plan">

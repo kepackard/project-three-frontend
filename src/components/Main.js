@@ -25,7 +25,7 @@ function Main(props) {
 
 
         getPlans();
-        // console.log(plans.url);
+        console.log(plans.url);
     };
 
     const deletePlans = async (id) => {

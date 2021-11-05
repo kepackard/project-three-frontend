@@ -62,6 +62,7 @@ div {
 header {
     font-family: $fell-english;
     color:$burlywood;
+    padding: 0 0 0 10px;
 
 }
 
@@ -69,6 +70,7 @@ header {
     font-style: italic;
     font-size: large;
     justify-content: left;
+    padding: 0 0 0 10px;
 }
 
 form {
@@ -121,15 +123,21 @@ h1 {
   background-color: $darkseagreen;
 }
 
-show-plan {
-
+.show-plan {
+  border: 2px solid $darkseagreen;
+  color: black;
+  background-color: $darkseagreen;
+  padding: 5px;
+  margin: 5px 0 5px 0;
 }
 
-notebook {
+.notebook {
   width: 100px;
   height: 100px;
+  padding: 10px;
 }
 
 img.mountain {
-  padding: 0 50px 0 0;
+  padding: 20px 50px 0 0;
+  max-height: 38vh;
 }
