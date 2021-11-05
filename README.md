@@ -1,5 +1,5 @@
 ## You Are Here
-#### _Lesson Plans from the US National Park Service for K&mdash;12 Educators_
+#### _Lesson Plans from the US National Park Service for K-12 Educators_
 
 
 
@@ -7,32 +7,32 @@
 ***
 ## Introduction
 
-Lorem ipsum a paragraph used to introduce interested parties to the project and needs to include one or more screenshots.
+_You Are Here_ allows educators all over the country to create, share, and download lesson plans about the U.S. National Park System. 
 
-Screenshot 1
-Screenshot 2
-Screenshot 3
+![Landing Page Example](https://imgur.com/XptYNWv.png)
 
+Plans can be used for on-site field trips or to supplement classroom learning. All grades K-12 are covered, and subject matter ranges from Science to History, Social Studies, and English.
 
-
+![Lesson Plan Page Example](https://imgur.com/PMylgGx.png)
 
 ---
 ## Technologies Used
 
-A list of all 
-* technologies, 
-* libraries, 
-* APIs, 
-* etc. 
-* used in the project.
+* MongoDB/Mongoose 
+* Express
+* React
+* Node
+* HTML
+* CSS and Sass
+* Heroku
+* Netlify
+* Git
 
 
 
 
 ---
 ## Getting Started
-
-Links to the project's planning (Trello board) and the deployed app on Heroku.
 
 [Click here](https://trello.com/b/DesWFR1o/project-3) for my Trello board!
 
@@ -44,10 +44,9 @@ Links to the project's planning (Trello board) and the deployed app on Heroku.
 ---
 ## Unsolved Problems
 
-* List 
-* any 
-* unsolved 
-* issues.
+* Bizarrely, a simple link to NPS.org is not working - I have a theory about why but didn't have time to test a fix.
+* I'd like to take a closer look at the styling for the two forms to clean up their appearance.
+* Eventually I'd like to give Update and Create a New Lesson Plan each their own page on the app.
 
 
 
@@ -55,9 +54,13 @@ Links to the project's planning (Trello board) and the deployed app on Heroku.
 ---
 ## Future Enhancements
 
-* Identify 
-* future 
-* features 
-* and enhancements 
-* planned for 
-* dashboard UI design.
+* Incorporate pre-existing lesson plans via the National Park Service API. 
+* Add authorization through Google Firebase. 
+* Add authentication. 
+* Improve mobile-friendly site.
+* Add a Back to Home button.
+* As a user, I want to be able to upload supplementary images or pdfs related to my custom lesson plan.
+* As a user, I want to be able to search lesson plans by subject, park, and grade level.
+* As a user, I want to be able to login to print, heart, or download my favorite lesson plans.
+* As a user, I want to be able to share my lesson plan to my Google Classroom or other virtual learning center.
+* As an admin, I want to be able to login to add or delete lesson plans.
