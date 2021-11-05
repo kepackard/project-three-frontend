@@ -13,7 +13,6 @@ function Index(props) {
         setNewForm({...newForm, [event.target.title]: event.target.value });
     };
 
-    //handle submit function form 
     const handleSubmit = (event) => {
         event.preventDefault();
         props.createPlans(newForm);
