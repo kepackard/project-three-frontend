@@ -32,7 +32,8 @@ function Show(props) {
     return (
         <div className="show-plan">
             <h2>{plan?.title}</h2>
-            <Link to="{plan.url}" target="_blank"> Click Here for the Full Lesson Plan</Link>
+            {/* The url below doesn't work so I commented it out. It directs back to the plan's show page! I'm sure it's a simple fix but I can't see it right now. */}
+            {/* <Link to="{plan?.url}" target="_blank"> Click Here for the Full Lesson Plan</Link> */}
             <h4>Park: {plan?.parks}</h4>
             <h4>Lesson Objective: {plan?.questionObjective}</h4>
             <h4>Subject: {plan?.subject}</h4>
